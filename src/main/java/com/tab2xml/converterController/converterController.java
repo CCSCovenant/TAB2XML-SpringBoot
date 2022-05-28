@@ -13,6 +13,7 @@ public class converterController {
 	converterController(){
 
 	}
+	@CrossOrigin()
 	@PostMapping(
 			value = "/mxl",
 			consumes = "text/plain"
@@ -21,9 +22,13 @@ public class converterController {
 		converter = new Converter(tablature);
 		return converter.getMusicXML();
 	}
+	@CrossOrigin()
 	@GetMapping("/mxlError")
 	public List<ValidationError> getErrors(){
 		return converter.validate();
 	}
-
+	@GetMapping("/")
+	String hello() {
+		return "successfully deployed.";
+	}
 }
