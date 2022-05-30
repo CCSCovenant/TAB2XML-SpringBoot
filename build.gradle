@@ -12,7 +12,11 @@ repositories {
 	mavenCentral()
 	maven { url 'https://jitpack.io' }
 }
-
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.tab2xml.server.ServerApplication'
+	}
+}
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
