@@ -28,7 +28,7 @@ public class converterController {
 		return converter.validate();
 	}
 	@GetMapping("/")
-	String hello() {
+	public String hello() {
 		return "successfully deployed.";
 	}
 }
